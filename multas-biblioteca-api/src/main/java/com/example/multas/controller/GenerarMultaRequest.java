@@ -4,7 +4,7 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 
 public record GenerarMultaRequest(
-    @NotBlank String estudianteId,
-    @NotBlank String concepto,
-    @Min(1) int diasAtraso
+    @NotBlank(message = "El código de estudiante es obligatorio") String estudianteId,
+    @NotBlank(message = "El concepto es obligatorio") String concepto,
+    @Min(value = 1, message = "Los días de atraso deben ser al menos 1") int diasAtraso
 ) {}
